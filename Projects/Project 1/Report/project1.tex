@@ -1,7 +1,7 @@
 %!TEX program = xelatex
 \documentclass[11pt]{article}
 
-\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption}
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption, color}
 \usepackage[version=4]{mhchem}
 \usepackage[utf8]{inputenc}
 
@@ -13,6 +13,8 @@
 %\setsansfont{Deja Vu Sans}
 %\setmonofont{Deja Vu Mono}
 
+\definecolor{gry}{rgb}{.9,.9,.9}
+
 \lstset{language=C++,
                 basicstyle=\ttfamily,
                 keywordstyle=\color{magenta}\ttfamily,
@@ -21,8 +23,14 @@
                 morecomment=[l][\color{orange}]{\#}}
 \lstset{alsolanguage=[90]Fortran}
 \lstset{basicstyle=\small}
-\lstset{backgroundcolor=\color{white}}
+\lstset{backgroundcolor=\color{gry}}
 \lstset{frame=single}
+\lstset{
+    numbers=left,
+    title=\lstname,
+    tabsize=4,
+}
+
 
 
 \geometry{margin=1in}
@@ -54,7 +62,7 @@
 %\tableofcontents
 \maketitle
 
-\centerline{Github Repository at \href{https://github.com/ThomasBolden/PHY480}{https://github.com/ThomasBolden/PHY480}}
+\centerline{Github Repository at \href{https://github.com/ThomasBolden/PHY-480-Spring-2016}{https://github.com/ThomasBolden/PHY-480-Spring-2016}}
 
 \begin{abstract}
 
@@ -62,6 +70,7 @@
 
 \end{abstract}
 
+\vspace{\fill}
 \tableofcontents
 
 \pagebreak
@@ -84,7 +93,7 @@
 
 \section{Code}
 
-    .
+    \lstinputlisting[language=C++]{../Code/Project1.cpp}
 
 \begin{thebibliography}{1}
 
