@@ -13,13 +13,13 @@
 %\setsansfont{Deja Vu Sans}
 %\setmonofont{Deja Vu Mono}
 
-\definecolor{gry}{rgb}{.9,.9,.9}
+\definecolor{gry}{rgb}{.95,.95,.95}
 
 \lstset{language=C++,
                 basicstyle=\ttfamily,
                 keywordstyle=\color{magenta}\ttfamily,
                 stringstyle=\color{green}\ttfamily,
-                commentstyle=\color{blue}\ttfamily,
+                commentstyle=\color{gray}\ttfamily,
                 morecomment=[l][\color{orange}]{\#}}
 \lstset{alsolanguage=[90]Fortran}
 \lstset{basicstyle=\small}
@@ -77,7 +77,9 @@
 
 \section{Introduction}
 
-    .
+    An important part of physics is being able to efficiently solve systems of linear equations. . . Given a differential equation of the form 
+    \begin{equation} - \dfrac{\dif\,^2}{\dif x^2} u(x) = f(x) \end{equation}
+    where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the boundary conditions $u(0)=u(1)=0$. 
 
 \section{Methods}
 

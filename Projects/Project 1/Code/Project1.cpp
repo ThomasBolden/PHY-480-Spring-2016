@@ -20,7 +20,8 @@ int main(){
 
 	cout << "Enter a number: "; // user enters a number 
 	cin >> n;
-	cout << "Enter a name for the output file: "; // user enters a name for the output file
+	cout << "Enter a name for the output file: "; 
+	// user enters a name for the output file
 	cin >> outfilename;
 
 	// body of the program
@@ -29,7 +30,8 @@ int main(){
 
 	// writing value to file, to be read and graphed in python later
     myfile.open(outfilename);
-	//myfile << setiosflags(ios::showpoint | ios::uppercase); // setting scientific notation of numbers
+	//myfile << setiosflags(ios::showpoint | ios::uppercase); 
+	// setting scientific notation of numbers
 	myfile << n << endl;
 
     myfile.close();
