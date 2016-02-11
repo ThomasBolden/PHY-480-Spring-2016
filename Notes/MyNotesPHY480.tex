@@ -1,0 +1,336 @@
+%!TEX program = xelatex
+\documentclass[10pt]{article} % use larger type; default would be 10pt
+
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,lipsum,listings}
+\usepackage[utf8]{inputenc}
+
+\defaultfontfeatures{Mapping=tex-text} 
+
+\lstset{language=C++,
+                basicstyle=consolas,
+                keywordstyle=\color{magenta}\ttfamily,
+                stringstyle=\color{green}\ttfamily,
+                commentstyle=\color{blue}\ttfamily,
+                morecomment=[l][\color{orange}]{\#}}
+\lstset{alsolanguage=[90]Fortran}
+\lstset{basicstyle=\small}
+\lstset{backgroundcolor=\color{white}}
+\lstset{frame=single}
+
+\setmainfont{Charter} 
+%\setsansfont{Deja Vu Sans}
+%\setmonofont{Deja Vu Mono}
+
+\geometry{margin=1in}
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+\title{PHY 480 - Computational Phyics Class Notes}
+\author{Thomas Bolden}
+\date{}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor= green,
+}
+
+\begin{document}
+
+
+
+\tableofcontents
+
+\maketitle
+
+\section{Numerical Derivation} % January 20, 2016
+
+%%%%%
+
+\subsection{Taylor Expansions}
+
+    \[ f(x+h) = f(x) + hf'+\frac{h^2}{2!}f'' + \frac{h^3}{3!}f''' + O(h^4) \;\;\; (i) \]
+    \[ f(h-h) = f(x) - hf'+\frac{h^2}{2!} f'' - \frac{h^3}{3!} f''' +O(h^4) \]
+
+    with step length $h$
+
+\[ (i) \text{ becomes } f(x+h)-f(x) = hf'+\frac{h^2}{2!}+O(h^3) \]
+\[ \frac{f(x+h)-f(x)}{h} = f'+O(h) \]
+
+This gives the first approximation of $f'$
+
+There is a truncation error
+
+\[ f' \approx \dfrac{f(x+h)-f(x)}{h} \;\;\; \text{Euler's forward equation} \]
+
+Given
+\[ \frac{\dif{f}}{\dif{t}} = g(t) \Rightarrow \dfrac{f(t+h)-f(t)}{h} \approx g(t) \]
+
+\[ \text{We can never do this in a machine: } \;\; \lim_{h\to 0} \dfrac{f(x+h)-f(x)}{h} = f' \]
+
+So we wonder how we can do this numerically. When we make $h$ smaller and smaller, we run \\ into problems with relative error which can cause things to blow up (after $10^{-5}$ you \\ encounter rounding errors).
+
+Let's discretize the error: [notes picture 1]
+
+A function of domain $[a,b]$, with $a \leq x_i \leq b$, $x_i = x_0 + ih $ \\ $ \Rightarrow \;\; f(c) = f(x_i) = f_i \;\; , \;\; f(x+h) = f_{i+1} $
+
+\[ \dfrac{f(x+h)-f(x)}{h} = \dfrac{f_{i+1}-f_i}{h} = f' \]
+\[ \dfrac{f(x)-f(x-h)}{h} = \dfrac{f_i-f_{i-1}}{h} = f' \]
+
+(Backwards Euler truncation OCh) 
+
+\pagebreak
+
+Lets try (using the Taylor expansions)
+
+\[ f(x+h)-f(x-h) = 2hf'+\frac{2}{3!}h^3f'''+O(h^5) \;\; \longleftarrow \text{ notice we only get odd powers} \]
+
+\[ \Rightarrow \dfrac{f(x+h) - f(x-h)}{2h} = f'+O(h^2) \] 
+
+Which is a three point equation, which can represent quadratic functions well.
+
+We get the result \[ \dfrac{f(x+h)+f(x-h)-2f(x)}{h^2} = f''+O(h^2) \]
+
+which is a workhorse to solve differential equations!
+
+\textit{4 formans formulae:} (VERY IMPORTANT!!)
+
+\[ \dfrac{f_{i+1}-f_i}{h} = f'+O(h) \]
+\[ \dfrac{f_i-f_{i-1}}{h} = f'+O(h) \]
+\[ \dfrac{f_{i+1}-f_{i-1}}{2h} = f'+O(h^2) \]
+\[ \dfrac{f_{i+1} + f_{i-1} - 2f_i}{h^2} = f''+O(h^2) \]
+
+%%%%%
+
+\subsection{Intro to Project 1 - The Math}
+
+We are given a differential equation of the type: $\dfrac{\dif^2}{\dif{x^2}} = f(x) $. Assume $ x \in [0,1]$, and there are boundary conditions (Drinichlet conditions) $U(0)=0 \;\; , \;\; U(1)=0$.
+
+In order to discretize, set
+
+\[ x \in [0,1] \longrightarrow \{ x_0,x_1,...,x_m\} \] 
+\[ 0 \rightarrow x_0 \;\;\; , \;\;\; i \rightarrow x_i \;\;\; , \;\;\; x_i=x_0+ih \]
+
+The differential equatino gets replaced by: 
+
+\[ \dfrac{U_{i+1}+U_{i-1}-2U_i}{U^2} = f_i \text{ (not exactly precise but close enough)} \]
+
+\[ U_{i+1}+U_{i-1}-2U_i=U^2f_i=\tilde{f_i} \]
+
+\[ \hat{u} = \left[ \begin{array}{c} u_0 \\ u_1 \\ . \\ . \\ . \\ u_{m-1} \\ u_m \end{array} \right] \;\; , \;\; \hat{f} = \left[ \begin{array}{c}  f_0 \\ f_1 \\ . \\ . \\ . \\ f_{m-1} \\ f_m \end{array} \right]  \]
+
+\pagebreak
+
+\[ \hat{A} \cdot \hat{u} = \hat{\tilde{f}}  \]
+
+\[ \Rightarrow \hat{A} = \dfrac{1}{h^2} \left[ \begin{array}{ccccc} -2&1&0&0&0 \\ 1&-2&1&0&0  \\ 0&1&-2&1&0 \\ 0&0&1&-2&1 \\ 0&0&0&1&-2 \end{array} \right] \]
+
+
+
+%%%%
+\subsection{Loss of Numerical Precision}
+
+\href{http://compphysics.github.io/ComputationalPhysicsMSU/doc/pub/languages/pdf/languages-print.pdf}{Loss of numerical Precision on github}
+
+%%%%
+\subsection{Using GitHub}
+
+Before doing anything, run brew update and brew upgrade to get the latest version of things.
+
+Open the repository in the terminal from the GitHub desktop application. \\ To make a new folder in the repository:
+\begin{verbatim}
+    MacBook-Pro: RepositoryName Thomas$ mkdir FolderName
+\end{verbatim}
+Copy files from the computer to the folder in finder
+
+MAKE SURE TO PUSH CHANGES TO GITHUB
+
+%%%%
+\subsection{Introducing C++}
+
+The Basics
+
+\underline{Running Programs from the Command Line}
+
+The first step is changing the current directory to where the file is stored (use ls to list files):
+\begin{verbatim}
+    MacBook-Pro:~ Thomas$  cd /path/to/file
+\end{verbatim}
+
+Once we are in the correct directory, compile the code in C++ using -o:
+\begin{verbatim}
+    MacBook-Pro: FileDirectory Thomas$  c++ -o filename.x filename.cpp
+\end{verbatim}
+
+If the code has armadillo in it:
+\begin{verbatim}
+    MacBook-Pro: FileDirectory Thomas$ c++ -o filename.x filename.cpp -larmadillo -llapack 
+    -lblas -L/usr/local/lib -I/usr/local/include 
+\end{verbatim}
+
+Then run the code:
+\begin{verbatim}
+    MacBook-Pro: FileDirectory Thomas$  ./filename.x
+\end{verbatim}
+
+Here are some other useful terminal commands: \\
+To view the current workind directory path
+\begin{verbatim}
+    MacBook-Pro:~ Thomas$ pwd
+\end{verbatim}
+To move up one level in a directory
+\begin{verbatim}
+    MacBook-Pro:~ Thomas$ cd ..
+\end{verbatim}
+
+\pagebreak
+
+\underline{Hello World}
+
+\begin{lstlisting}
+ 1    // comments look like this
+ 2    #include<iostream> // input and output
+ 3    #include<cmath> // math functions
+ 4    using namespace std;
+ 5    int main(int argc, char* argv[])
+ 6    {
+ 7        // convert the text argv[1] to double using atof:
+ 8        double r = atof(argv[1]); /* convert the text argv[1] to double */
+ 9        double s = sin(r);
+10        cout << "Hello, World! sin(" << r << ") =" << s << endl;
+11        return 0; /* success execution of the program */
+12    }
+\end{lstlisting}
+
+In C++, you do not need to declare variables, but should anyways \\ \hspace{.4cm} Because there is an argv[1] in the program, you need to give the program a variable IN THE COMMAND LINE. Otherwise use cin >>
+
+\underline{Pointers}
+
+A pointer specifies where a value resides in computer memory (like an address)
+
+Take advantage of ``call by reference" !
+
+%%%%
+\subsection{Error Analysis}
+
+\[ \epsilon = \log_{10} \left( \left| \dfrac{f''_{\text{computed}}-f''_{\text{exact}}}{f''_{\text{exact}}} \right| \right) \]
+
+\[ \epsilon_{\text{tot}} = \epsilon_{\text{approx}}+\epsilon_{\text{ro}} \]
+
+\[ f''_0=\dfrac{f_h-2f_0+f_{-h}}{h^2} = \dfrac{(f_h-f_0)+(f_{-h}-f_0)}{h^2} \]
+
+Our total error becomes [*see website slides]
+
+\section{Linear Algebra Methods}
+
+Useful Packages for computing linear algebra
+
+\begin{itemize}
+\item LINPACK: linear algebra and least square problems
+\item LANPACK
+\item BLAS (Basic Linear Algebra Subprograms)
+\end{itemize}
+
+C++  stores matrices in row major order! vs. column major order in Fortran
+
+\subsection{Gaussian Elimination}
+
+-Forward substitution \\ -Backward substitution
+
+EX: $ \hat{A} \in \mathbb{R}^{4\times 4} $ , $\hat{x} \in \mathbb{R}^{1\times 4}$ , $w \int \mathbb{R}^{1\times 4}$
+
+\[ \left[ \begin{array}{cccc} a_{11} & a_{12} & a_{13}&a_{14} \\ a_{21}&a_{22}&a_{23}&a_{24} \\ a_{31}&a_{32}&a_{33}&a_{34} \\a_{41}&a_{42}&a_{43}&a_{44} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4 \end{array} \right] = \left[ \begin{array}{c} w_1\\w_2\\w_3\\w_4 \end{array} \right] \longrightarrow \dots \longrightarrow \left[ \begin{array}{cccc} a_{11} & a_{12}&a_{13}&a_{14}  \\ 0&\tilde{a}_{22}&\tilde{a}_{23}&\tilde{a}_{24}  \\ 0&0&\tilde{a}_{33}&\tilde{a}_{34}    \\ 0&0&0& \tilde{a}_{44}    \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4 \end{array} \right] = \left[ \begin{array}{c} w_1\\w_2\\w_3\\w_4 \end{array} \right] \]
+
+The number of floating point operations on an $M\times N$ matrix goes as $\frac{2}{3} M^3$ (forward substitution) + $M^2$ (backward substitution).
+
+Given $\hat{A} \in \mathbb{R}^{n \times n}$, and $\hat{A} = \hat{L} \cdot \hat{u}$
+
+\[ \left[ \begin{array}{cccc} 1&0&0&0 \\ \ell_{21} &1&0&0 \\ \ell_{31} & \ell_{32} &1&0 \\ \ell_{41} & \ell_{42} & \ell_{43} &1 \end{array} \right] \times \left[ \begin{array}{cccc} u_{11}&2_{12}&u_{13}&u_{14} \\ 0&u_{22}&u_{23}&u_{24} \\ 0&0&u_{33} &u_{34} \\ 0&0&0&u_{44} \end{array} \right] \]
+ 
+\[ \det(A) = \det(Lu) = \det(L) \det(u) = \prod_{i=1}^n u_{ii} = \prod_{i=1}^n \dfrac{i+1}{i} = n + 1 \]
+
+LU  decomposition
+
+We can avoid brute force and reduce the number of FLOPS to $4M$ !!
+
+FLOPS, Gaussian Elimination \& tridiagonal solver (Thomas Algorithm).
+
+By forward substitution, \[ \tilde{d}_i = d_i - \dfrac{e^2_{i-1}}{\tilde{d}_{i-1}} \]
+
+\subsection{Matrix Handling in C++}
+
+Row Major Order, Addition
+\begin{lstlisting}
+int N = 100;
+double A[100][100];
+// initialize all elements to zero
+for(i=0 ; i<N ; i++) {
+    for( j=0 ; j<n ; j++) {
+        come back from notes online
+    }
+}
+\end{lstlisting}
+
+There are a lot of lines here, why Armadillo is so helpful !!
+
+\pagebreak
+\begin{lstlisting}
+#include <armadillo>
+#include <armadillo>
+
+using namespace std;
+using namespace arma;
+
+int main(int argc, char** argv) {
+    mat A = randu<mat>(5,5);
+    mat N = randu<mat>(5,5);
+
+    cout << A*B << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\section{Scientific Report Writing}
+
+\section{Mat}
+
+\section{Interpolation}
+
+\subsection{Cubic Spline Interpolation}
+
+Situation:
+\[ \begin{array}{cc}
+x_0 & f(x_0) \\ x_1 & f(x_1) \\ x_2 & f(x_2) \\ .&. \\ .&. \\ .&. \\ x_n & f(x_n)
+\end{array} \]
+
+\begin{align*}
+f(x) \approx O_n(x) &= \sum_{i=0}^n a_i x^i \\
+& = a_0 + a_1x + a_2x^2 + ... + a_nx^n 
+\end{align*}
+
+(continue from written notes)
+
+\subsection{Lagrange Interpolation}
+
+\section{Project 2}
+
+\subsection{The physics of project 2}
+
+Quantum Dots
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
