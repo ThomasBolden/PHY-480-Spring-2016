@@ -5,23 +5,39 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
-//#include "armadillo"
+#include "armadillo"
 
 using namespace std;
-//using namespace arma;
+using namespace arma;
+
 ofstream myfile;
 
+// -~- Functions -~- \\
+
+double f(double x){
+	return 100*exp(-10*x);
+}
+
+double analyze(double x){
+	return 1.0-(1-exp(-10))*x-exp(-10*x);
+}
+
+// -~- Main -~- \\
 
 int main(){
 
 	// -~- Declaration of Variables -~- \\
+
 	double n;
 	string outfilename;
 
-	cout << "Enter a number: "; // user enters a number 
-	cin >> n;
+	cout << "Dimensions of the nxn matrix: ";
+	while(!(cin >> n)){
+    	cout << "Not a valid number! Try again: ";
+    	cin.clear();
+    	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
 	cout << "Enter a name for the output file: "; 
-	// user enters a name for the output file
 	cin >> outfilename;
 
 	// body of the program
@@ -30,8 +46,7 @@ int main(){
 
 	// writing value to file, to be read and graphed in python later
     myfile.open(outfilename);
-	//myfile << setiosflags(ios::showpoint | ios::uppercase); 
-	// setting scientific notation of numbers
+	myfile << setiosflags(ios::showpoint | ios::uppercase); //sci notation
 	myfile << n << endl;
 
     myfile.close();

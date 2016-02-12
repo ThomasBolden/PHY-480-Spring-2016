@@ -2,7 +2,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[dvipsnames]{xcolor} % needed to declare before tikz
-\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption,}
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption}
 \usepackage[version=4]{mhchem}
 \usepackage[utf8]{inputenc}
 
@@ -18,17 +18,46 @@
 \definecolor{gry}{rgb}{.95,.95,.95}
 
 \lstset{language=C++,
+                moredelim=[is][\color{Green}\Codefont]{(}{)},
                 basicstyle=\Codefont,
                 identifierstyle=\Codefont,
                 directivestyle=\color{BurntOrange}\Codefont,
                 keywordstyle=\color{RubineRed}\Codefont,
                 stringstyle=\color{Green}\Codefont,
                 commentstyle=\color{gray}\Codefont,
-                emphstyle=\Codefont,
+                emphstyle=\color{Violet}\Codefont,
+                emph={1,2,3,4,5,6,7,8,9,0},
                 showspaces=false,
+                %keywordstyle=[2]\color{Violet},
+                keywords=[2]{*,1,2,3,4,5,6,7,8,9,0},
+                keywordstyle=[2]\color{blue},
+                showstringspaces=false,
                 morecomment=[l][\color{orange}]{\#}}
-%\lstset{alsolanguage=[90]Fortran}
-\lstset{basicstyle=\small}
+\lstset{literate=%
+    {0}{{{\color{RoyalPurple}0}}}1
+    {1}{{{\color{RoyalPurple}1}}}1
+    {2}{{{\color{RoyalPurple}2}}}1
+    {3}{{{\color{RoyalPurple}3}}}1
+    {4}{{{\color{RoyalPurple}4}}}1
+    {5}{{{\color{RoyalPurple}5}}}1
+    {6}{{{\color{RoyalPurple}6}}}1
+    {7}{{{\color{RoyalPurple}7}}}1
+    {8}{{{\color{RoyalPurple}8}}}1
+    {9}{{{\color{RoyalPurple}9}}}1
+    {.0}{{{\color{RoyalPurple}.0}}}2
+    {.1}{{{\color{RoyalPurple}.1}}}2
+    {.2}{{{\color{RoyalPurple}.2}}}2
+    {.3}{{{\color{RoyalPurple}.3}}}2
+    {.4}{{{\color{RoyalPurple}.4}}}2
+    {.5}{{{\color{RoyalPurple}.5}}}2
+    {.6}{{{\color{RoyalPurple}.6}}}2
+    {.7}{{{\color{RoyalPurple}.7}}}2
+    {.8}{{{\color{RoyalPurple}.8}}}2
+    {.9}{{{\color{RoyalPurple}.9}}}2
+}
+\lstset{alsolanguage=[90]Fortran}
+\lstset{alsolanguage=python}
+\lstset{basicstyle=\small\Codefont}
 \lstset{backgroundcolor=\color{gry}}
 \lstset{frame=single}
 \lstset{
@@ -37,9 +66,6 @@
     title=\lstname,
     tabsize=4,
 }
-
-
-
 \geometry{margin=1in}
 \geometry{letterpaper} % or letterpaper (US) or a5paper or....
 \usepackage[parfill]{parskip} % Activated to begin paragraphs with an empty line rather than an indent
@@ -64,6 +90,8 @@
 }{%
   \end{array}\right]
 }
+
+\setmainfont{Charter}
 
 \begin{document}
 
@@ -92,7 +120,10 @@
 
 \subsection{Introduction}
 
-    An important part of physics is being able to efficiently solve systems of linear equations. . . 
+    An important part of physics is being able to efficiently solve differential equations. There are many situations in which differential equations can be solved as a system of linear equations. Such equations are called linear second-order differential equations, of the form
+    \begin{equation} \dfrac{\dif\,^2 y}{\dif x^2} + k^2(x) y = f(x) \; , \end{equation}
+    where $f(x)$ is the inhomogenous term, and $k^2$ is a real function. \\
+    An example of this is Poisson
 
 \subsection{Methods}
 
@@ -113,7 +144,7 @@
 
 \subsection{Results}
 
-    .
+    .  \[ d\tilde{i}=i/i-1 \]
 
 \subsection{Conclusions}
 
@@ -122,6 +153,8 @@
 \subsection{Code}
 
     \lstinputlisting[language=C++]{../Code/Project1.cpp}
+
+    \lstinputlisting[language=python]{../Code/plots.py}
 
 \begin{thebibliography}{1}
 

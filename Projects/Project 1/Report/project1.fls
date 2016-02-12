@@ -324,6 +324,14 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/parskip/parskip.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/parskip/parskip.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -424,4 +432,7 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ../Code/plots.py
+INPUT ../Code/plots.py
+INPUT ../Code/plots.py
 INPUT project1.aux

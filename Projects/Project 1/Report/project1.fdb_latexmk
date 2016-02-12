@@ -1,6 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1455240405 "project1.tex" "project1.pdf" "project1" 1455240418
-  "../Code/Project1.cpp" 1455226340 773 d42fe73b729f064a3449a2474df08219 ""
+["pdflatex"] 1455304530 "project1.tex" "project1.pdf" "project1" 1455304533
+  "../Code/Project1.cpp" 1455302924 982 a39083f2e0fa4d9e406d5baad78f0eab ""
+  "../Code/plots.py" 1455298111 812 dca892094fe68b0a5506f4a5d392fb04 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -247,13 +248,13 @@
   "/usr/local/texlive/2012/texmf-var/web2c/xetex/xelatex.fmt" 1341108757 3110378 0403bb164468d05470a81b7d8105cc63 ""
   "/usr/local/texlive/2012/texmf.cnf" 1341108668 572 7ea7194897937febeb63145e1c3a1f03 ""
   "/usr/local/texlive/2012/texmf/web2c/texmf.cnf" 1336865692 31299 729e216d9b945005c0d4b079c0500bc9 ""
-  "project1.aux" 1455240413 1002 abe0c15fdf2bddcc4de8e727958d45da ""
-  "project1.out" 1455240413 221 dc8dfac6219c68c05a8642d08837f3af ""
-  "project1.tex" 1455240404 4188 dd10070c669091e5ad13d1c68ef22eff ""
-  "project1.toc" 1455240414 261 b7988980466644a939654d570dc621ec ""
+  "project1.aux" 1455304532 1002 67c1729da9db92dcf5789c45139ad302 ""
+  "project1.out" 1455304532 221 dc8dfac6219c68c05a8642d08837f3af ""
+  "project1.tex" 1455304530 5749 b4b4cb9a3f1aa87ca99c16c2866dfa78 ""
+  "project1.toc" 1455304533 261 c1ca48bd81e4555202df0b1a158c54d9 ""
   (generated)
-  "project1.log"
+  "project1.pdf"
+  "project1.out"
   "project1.aux"
   "project1.toc"
-  "project1.out"
-  "project1.pdf"
+  "project1.log"
