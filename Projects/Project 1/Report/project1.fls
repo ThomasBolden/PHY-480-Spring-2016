@@ -176,8 +176,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mhsetup.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mhsetup.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/setspace/setspace.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/nopageno/nopageno.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/nopageno/nopageno.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/commath/commath.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/commath/commath.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/ifthen.sty

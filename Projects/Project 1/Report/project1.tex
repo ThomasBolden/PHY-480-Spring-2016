@@ -2,7 +2,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[dvipsnames]{xcolor} % needed to declare before tikz
-\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption,}
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption,}
 \usepackage[version=4]{mhchem}
 \usepackage[utf8]{inputenc}
 
@@ -58,6 +58,7 @@
 
 \setcounter{secnumdepth}{0} % deactivate for section numbers
 %\sectionfont{\fontsize{12}{15}\selectfont} % Activate for same font size sections
+\subsectionfont{\fontsize{15}{15}\selectfont}
 \newenvironment{amatrix}[1]{%
   \left[\begin{array}{@{}*{#1}{c}|c@{}}
 }{%
@@ -69,45 +70,64 @@
 %\tableofcontents
 \maketitle
 
+\thispagestyle{empty}
+
 \centerline{Github Repository at \href{https://github.com/ThomasBolden/PHY-480-Spring-2016}{https://github.com/ThomasBolden/PHY-480-Spring-2016}}
 
 \begin{abstract}
 
-    herrings
+    %In this project, a solution was found to the one-dimensional Poissson equation with Dirichlet boundary conditions. This was done by rewriting the Poisson equation as a set of linear equations and implimenting a tridiagonal matrix solver. The error in the results ... 
+    \lipsum[1-1]
 
 \end{abstract}
 
 \vspace{\fill}
 \tableofcontents
 
+ \vspace{2cm}
+
 \pagebreak
 
-\section{Introduction}
+\setcounter{page}{1}
 
-    An important part of physics is being able to efficiently solve systems of linear equations. . . Given a differential equation of the form 
+\subsection{Introduction}
+
+    An important part of physics is being able to efficiently solve systems of linear equations. . . 
+
+\subsection{Methods}
+
+    Given a differential equation of the form 
     \begin{equation} - \dfrac{\dif\,^2}{\dif x^2} u(x) = f(x) \end{equation}
     where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the boundary conditions $u(0)=u(1)=0$. The second derivative can be approximated as 
     \begin{equation} u'' = \dfrac{u_{i+1}+u_{i-1}-2u_i}{u^2} \end{equation}
 
-\section{Methods}
+    \[ \arraycolsep 1.0ex \bold{A} = \left( \begin{array}{c c c c c c c} 
+    \vspace{.1cm} 2 & \llap{-}1 & 0 & \cdots & \cdots & \cdots & 0 \\
+    \llap{-}1 & 2 & \llap{-}1 & 0 & \cdots & \cdots & 0 \\
+    0 & \llap{-}1 & 2 & \llap{-}1 & \ddots &  & 0 \\
+    \vdots & 0 & \llap{-}1 & 2 & \ddots & \ddots & \vdots \\
+    \vdots & \vdots & \ddots &\ddots&\ddots&\ddots&0 \\
+    \vdots &\vdots&&\ddots&\ddots&\ddots& \llap{-}1 \vspace{.1cm} \\ 
+    0 &0&\cdots&\cdots&0&\llap{-}1& 2 
+    \end{array} \right) \;\; , \;\; \bold{v} = \left( \begin{array}{c} v_0 \\ v_1 \\ \vdots \\ v_{n-1} \\ v_n \end{array} \right) \]
+
+\subsection{Results}
 
     .
 
-\section{Results}
+\subsection{Conclusions}
 
     .
 
-\section{Conclusions}
-
-    .
-
-\section{Code}
+\subsection{Code}
 
     \lstinputlisting[language=C++]{../Code/Project1.cpp}
 
 \begin{thebibliography}{1}
 
     \bibitem{morten} M. Hjorth-Jensen, {\em Computational Physics}, University of Oslo (2013).
+
+    \bibitem{mclean} W. McLean, {\em Poisson Solvers}, Northwestern University (2004).
 
 \end{thebibliography}
 
