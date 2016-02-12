@@ -18,8 +18,8 @@
 \definecolor{gry}{rgb}{.95,.95,.95}
 
 \lstset{language=C++,
-                moredelim=[is][\color{Green}\Codefont]{(}{)},
-                basicstyle=\Codefont,
+                moredelim=[is][\color{Green}\Codefont]{<}{>},
+                basicstyle=\small\Codefont,
                 identifierstyle=\Codefont,
                 directivestyle=\color{BurntOrange}\Codefont,
                 keywordstyle=\color{RubineRed}\Codefont,
@@ -34,30 +34,29 @@
                 showstringspaces=false,
                 morecomment=[l][\color{orange}]{\#}}
 \lstset{literate=%
-    {0}{{{\color{RoyalPurple}0}}}1
-    {1}{{{\color{RoyalPurple}1}}}1
-    {2}{{{\color{RoyalPurple}2}}}1
-    {3}{{{\color{RoyalPurple}3}}}1
-    {4}{{{\color{RoyalPurple}4}}}1
-    {5}{{{\color{RoyalPurple}5}}}1
-    {6}{{{\color{RoyalPurple}6}}}1
-    {7}{{{\color{RoyalPurple}7}}}1
-    {8}{{{\color{RoyalPurple}8}}}1
-    {9}{{{\color{RoyalPurple}9}}}1
-    {.0}{{{\color{RoyalPurple}.0}}}2
-    {.1}{{{\color{RoyalPurple}.1}}}2
-    {.2}{{{\color{RoyalPurple}.2}}}2
-    {.3}{{{\color{RoyalPurple}.3}}}2
-    {.4}{{{\color{RoyalPurple}.4}}}2
-    {.5}{{{\color{RoyalPurple}.5}}}2
-    {.6}{{{\color{RoyalPurple}.6}}}2
-    {.7}{{{\color{RoyalPurple}.7}}}2
-    {.8}{{{\color{RoyalPurple}.8}}}2
-    {.9}{{{\color{RoyalPurple}.9}}}2
+    *{0}{{{\color{NavyBlue}0}}}1
+    {1}{{{\color{NavyBlue}1}}}1
+    {2}{{{\color{NavyBlue}2}}}1
+    {3}{{{\color{NavyBlue}3}}}1
+    {4}{{{\color{NavyBlue}4}}}1
+    {5}{{{\color{NavyBlue}5}}}1
+    {6}{{{\color{NavyBlue}6}}}1
+    {7}{{{\color{NavyBlue}7}}}1
+    {8}{{{\color{NavyBlue}8}}}1
+    {9}{{{\color{NavyBlue}9}}}1
+    {.0}{{{\color{NavyBlue}.0}}}2
+    {.1}{{{\color{NavyBlue}.1}}}2
+    {.2}{{{\color{NavyBlue}.2}}}2
+    {.3}{{{\color{NavyBlue}.3}}}2
+    {.4}{{{\color{NavyBlue}.4}}}2
+    {.5}{{{\color{NavyBlue}.5}}}2
+    {.6}{{{\color{NavyBlue}.6}}}2
+    {.7}{{{\color{NavyBlue}.7}}}2
+    {.8}{{{\color{NavyBlue}.8}}}2
+    {.9}{{{\color{NavyBlue}.9}}}2
 }
 \lstset{alsolanguage=[90]Fortran}
 \lstset{alsolanguage=python}
-\lstset{basicstyle=\small\Codefont}
 \lstset{backgroundcolor=\color{gry}}
 \lstset{frame=single}
 \lstset{
@@ -120,10 +119,14 @@
 
 \subsection{Introduction}
 
-    An important part of physics is being able to efficiently solve differential equations. There are many situations in which differential equations can be solved as a system of linear equations. Such equations are called linear second-order differential equations, of the form
+    An important skill in physics is being able to efficiently solve differential equations. There are many situations in which differential equations can be solved as a system of linear equations. Such equations are called linear second-order differential equations, of the form
     \begin{equation} \dfrac{\dif\,^2 y}{\dif x^2} + k^2(x) y = f(x) \; , \end{equation}
     where $f(x)$ is the inhomogenous term, and $k^2$ is a real function. \\
-    An example of this is Poisson
+
+    An example of this being useful is in electromagnetism. Poisson's equation describes the electrostatic potential energy field $\Phi$ caused by a given charge density distribution $\rho$. The equation in three dimensions is
+    \begin{equation} \nabla^2 \Phi = - 4 \pi \rho(\mathbf{r}) \end{equation}
+    where the electrostatic potential and charge density are spherically symmetric. This allows one to simplify the equation to one dimension
+    \begin{equation} \dfrac{1}{r^2} \dfrac{\dif}{\dif r} \left( r^2 \dfrac{\dif \Phi}{\dif r} \right) = -4\pi \rho(r) \end{equation}
 
 \subsection{Methods}
 
@@ -144,7 +147,7 @@
 
 \subsection{Results}
 
-    .  \[ d\tilde{i}=i/i-1 \]
+    .  \[ d\tilde{i}=i/i-1 \] relative error should give a flat line
 
 \subsection{Conclusions}
 

@@ -5,7 +5,7 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
-#include "armadillo"
+#include <armadillo>
 
 using namespace std;
 using namespace arma;
