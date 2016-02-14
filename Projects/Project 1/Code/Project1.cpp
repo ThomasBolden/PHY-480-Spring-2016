@@ -99,19 +99,19 @@ int main(){
 
     finish = clock() - start;
 
-    float processortime = ((float)finish)/CLOCKS_PER_SEC;
+    double processortime = ((double)finish)/CLOCKS_PER_SEC;
 
 	// -~- writing results to file, to be read and graphed in python -~- \\
 
     myfile.open(outfilename);
-	myfile << setiosflags(ios::showpoint | ios::uppercase); //sci notation
+	//myfile << setiosflags(ios::showpoint | ios::uppercase); //sci notation
 	myfile << "Solution to tridiagonal matrix of size n=" << n << endl;
 	myfile << "Time elapsed = " << processortime << " seconds" << endl ;
 	myfile << "       x:             u(x):          v(x):  " << endl;
     for (int i=1;i<=n;i++) {
-       myfile << setw(15) << setprecision(10) << x[i];
-       myfile << setw(15) << setprecision(10) << u[i];
-       myfile << setw(15) << setprecision(10) << v[i] << endl;
+       myfile << setw(15) << setprecision(8) << x[i];
+       myfile << setw(15) << setprecision(8) << u[i];
+       myfile << setw(15) << setprecision(8) << v[i] << endl;
     }
 
     myfile.close();

@@ -2,7 +2,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[dvipsnames]{xcolor} % needed to declare before tikz
-\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption}
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, algorithm, algpseudocode, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption}
 \usepackage[version=4]{mhchem}
 \usepackage[utf8]{inputenc}
 
@@ -137,7 +137,7 @@
 
     Given a differential equation of the form 
     \begin{equation} - \dfrac{\dif\,^2}{\dif x^2} u(x) = f(x) \end{equation}
-    where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the Dirichlet boundary conditions $u(0)=u(1)=0$. We can define a discretized approximation second derivative of $u$ as $v_i$ with grid points $x_i=ih$ in the interval $x_0=0$ to $x_{n+1}=1$, and with step lengths $h=1/(n+1)$. The boundary conditions become $v_0 = 0 = v_{n+1}$. The second derivative of $u$ can be approximated as 
+    where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the Dirichlet boundary conditions $u(0)=u(1)=0$. We can define a discretized approximation second derivative of $u$ as $v_i$ with grid points $x_i=ih$ in the interval $x_0=0$ to $x_{n+1}=1$, and with step lengths $h=1/(n+1)$. The boundary conditions become $v_0 = 0 = v_{n+1}$. If the source term is $f(x) = 100e^{-10x}$ , the exact closed-form solution is $u(x) = 1−(1−e^{−10})x−e^{−10x}$. The second derivative of $u$ can be approximated as 
     \begin{equation} -u'' = -\dfrac{v_{i+1}+v_{i-1}-2v_i}{h^2} = f_i \;\;\;\; \text{for}\;\; i = 1,\dots,n \end{equation}
     This equation can be written as a set of linear equations of the form
     \begin{equation} \mathbf{Av} = \tilde{\mathbf{b}}  \end{equation}
@@ -153,12 +153,32 @@
     0 &0&\cdots&\cdots&0&\llap{-}1& 2 
     \end{array} \right] \;\; , \;\; \bold{v} = \left[ \begin{array}{c} v_0 \\ v_1 \\ \vdots \\ \vdots \\ v_{n-1} \\ v_n \end{array} \right] \;\; , \;\; \tilde{b}_i = h^2 f_i \]
 
-    If the source term is $f(x) = 100e^{-10x}$ 
+    One way to solve tridiagonal matrices (like the one above) is Gaussian elimination. Basically, Gaussian elimination uses the first equation to eliminate the first unknown $x_1$ from the remaining equations, and continues this trend for the remaining equations until an upper triangular matrix is formed. An upper triangular matrix can be easily solved using back substitution. This process requires a total of $\frac{2n^3}{3} + \mathcal{O}(n^2)$ floating point operations. The general algorithm is below.
+    
+    \begin{algorithm}
+    \caption{Gaussian Elimination}
+    \label{CHalgorithm}
+    \begin{algorithmic}[1]
+    \Function{GaussElim}{A}
+    \For{$k=1$ to  $n-1$}
+    \For{$i=k+1$ to $n$}
+    \State $a_{ik} = \frac{a_{ik}}{a_{kk}}$
+    \For{$j=k+1$ to $n+1$}
+    \State $a_{ij}=a_{ij}-a_{ik}\times a_{kj}$
+    \EndFor
+    \EndFor
+    \EndFor
+    \EndFunction
+    \end{algorithmic}
+    \end{algorithm}
 
 \subsection{Results}
 
-    .  \[ d\tilde{i}=i/i-1 \] relative error should give a flat line
+    \begin{figure}[h!] \begin{center}
+    \includegraphics{setpsizechange.png}
+    \end{center}  \end{figure}
 
+%\pagebreak
 \subsection{Conclusions}
 
     .

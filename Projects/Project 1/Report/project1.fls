@@ -275,6 +275,14 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -418,6 +426,7 @@ OUTPUT project1.toc
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT setpsizechange.png
 INPUT ../Code/Project1.cpp
 INPUT ../Code/Project1.cpp
 INPUT ../Code/Project1.cpp

@@ -1,41 +1,58 @@
-# From matplotlib examples
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 14 00:10:43 2016
 
-# obvi not real useful yet
+@author: Thomas
+"""
 
-import numpy as np
+# testing testing 123
+
+import math
 import matplotlib.pyplot as plt
 
-plt.subplots_adjust(hspace=0.4)
-t = np.arange(0.01, 20.0, 0.01)
+def convert(rawdata):
+    
+    x = []
+    u = []
+    v = []
+    
+    file = open(rawdata , 'r')
+    valid_data = file.readlines()[3:]
+    
+    for line in valid_data:
+        
+        xuv = line.split()
+        x.append(float(xuv[0])) 
+        u.append(float(xuv[1])) 
+        v.append(float(xuv[2]))
+        
+    file.close()
 
-# log y axis
-plt.subplot(221)
-plt.semilogy(t, np.exp(-t/5.0))
-plt.title('semilogy')
-plt.grid(True)
+    return x, u, v
+    
+x10 , u10 , v10 = convert('n=10')
+x100 , u100 , v100 = convert('n=100')
+x1000 , u1000 , v1000 = convert('n=1000')
 
-# log x axis
-plt.subplot(222)
-plt.semilogx(t, np.sin(2*np.pi*t))
-plt.title('semilogx')
-plt.grid(True)
+exact = []
 
-# log x and y axis
-plt.subplot(223)
-plt.loglog(t, 20*np.exp(-t/10.0), basex=2)
-plt.grid(True)
-plt.title('loglog base 4 on x')
+for value in x1000:
+    
+    f = 1.0-(1-math.exp(-10))*value-math.exp(-10*value)
+    
+    exact.append(f)
 
-# with errorbars: clip non-positive values
-ax = plt.subplot(224)
-ax.set_xscale("log", nonposx='clip')
-ax.set_yscale("log", nonposy='clip')
+hfont = {'fontname':'Courier'}
 
-x = 10.0**np.linspace(0.0, 2.0, 20)
-y = x**2.0
-plt.errorbar(x, y, xerr=0.1*x, yerr=5.0 + 0.75*y)
-ax.set_ylim(ymin=0.1)
-ax.set_title('Errorbars go negative')
+fig , ax = plt.subplots(1) 
 
-
+ax.plot(x10,v10,'g-',label='n=10, v(x)')
+ax.plot(x100,v100,'b-',label='n=100, v(x)')
+ax.plot(x1000,v1000,'m-',label='n=1000, v(x)')
+ax.plot(x1000,exact,'k--',label='Exact , u(x)')
+ax.set_xlabel('x',**hfont)
+ax.set_ylabel('u(x)',**hfont) 
+ax.legend(loc='lower left',fancybox='True')
+ax.set_title('Comparing Solutions for Various Step Sizes',**hfont) 
+ax.grid()
 plt.show()
