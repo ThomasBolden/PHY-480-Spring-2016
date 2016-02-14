@@ -103,8 +103,7 @@
 
 \begin{abstract}
 
-    %In this project, a solution was found to the one-dimensional Poissson equation with Dirichlet boundary conditions. This was done by rewriting the Poisson equation as a set of linear equations and implimenting a tridiagonal matrix solver. The error in the results ... 
-    \lipsum[1-1]
+    In this project, a solution was found to the one-dimensional Poissson equation with Dirichlet boundary conditions. This was done by rewriting the Poisson equation as a set of linear equations and implimenting a tridiagonal matrix solver. It was confirmed that the tridiagonal solver approximation became more accurate as the step size decreased. Then, two other methods (Gaussian elimination, and LU decomposition) were implemented and compared. The error in the results of the LU defactorization method were found to be smaller than the error in the Gaussian elimination method.However, the calculation time became impractical after $n=$ steps.
 
 \end{abstract}
 
@@ -157,7 +156,7 @@
     
     \begin{algorithm}
     \caption{Gaussian Elimination}
-    \label{CHalgorithm}
+    \label{Gaussian Elimination}
     \begin{algorithmic}[1]
     \Function{GaussElim}{A}
     \For{$k=1$ to  $n-1$}
@@ -172,9 +171,32 @@
     \end{algorithmic}
     \end{algorithm}
 
+    We can compare this algorithm to the standard lower-upper (LU) decomposition. Equation (8) can also be written as $\mathbf{A}=LU$, assumin $\mathbf{A}$ is invertible. 
+    \begin{equation}
+    \mathbf{A} = \left[ \begin{array}{ccccc} 1&0&\cdots &\cdots &0\\ l_{21} & 1 & 0 & \cdots & 0 \\ l_{31} & l_{32} & \ddots & \ddots & \vdots \\ \vdots &\vdots &\ddots & \ddots &0 \\ l_{n1} &l_{n2} &\cdots & l_{n,n-1}& 1 \end{array} \right] \left[ \begin{array}{ccccc} u_{11} & u_{12} &\cdots &\cdots &u_{1n} \\ 0&u_{22}&\ddots&&\vdots \\ \vdots&0&\ddots&\ddots&\vdots \\ \vdots&\vdots&\ddots&\ddots&u_{n-1,n} \\ 0&0&\cdots&0&u_{nn} \end{array} \right]
+    \end{equation}
+
+    \begin{algorithm}
+    \caption{LU Decomposition}
+    \label{LU Decomp}
+    \begin{algorithmic}[1]
+    \Function{LUdecomp}{A}
+    \For{$k=1$ to  $n-1$}
+    \For{$i=k+1$ to $n$}
+    \State $a_{ik} = \frac{a_{ik}}{a_{kk}}$
+    \For{$j=k+1$ to $n+1$}
+    \State $a_{ij}=a_{ij}-a_{ik}\times a_{kj}$
+    \EndFor
+    \EndFor
+    \EndFor
+    \EndFunction
+    \end{algorithmic}
+    \end{algorithm}
+
+
 \subsection{Results}
 
-    \begin{figure}[h!] \begin{center}
+    \begin{figure}[h] \begin{center}
     \includegraphics{setpsizechange.png}
     \end{center}  \end{figure}
 

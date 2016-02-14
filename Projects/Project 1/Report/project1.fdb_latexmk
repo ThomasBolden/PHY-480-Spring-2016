@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1455435995 "project1.tex" "project1.pdf" "project1" 1455435999
+["pdflatex"] 1455438824 "project1.tex" "project1.pdf" "project1" 1455438834
   "../Code/Project1.cpp" 1455425603 2693 249fc6607c0f5b2dc48a1543732dea24 ""
   "../Code/plots.py" 1455431806 1172 d424b8d0b2bf2f9a092c2e8c6bd59f42 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -252,14 +252,14 @@
   "/usr/local/texlive/2012/texmf-var/web2c/xetex/xelatex.fmt" 1341108757 3110378 0403bb164468d05470a81b7d8105cc63 ""
   "/usr/local/texlive/2012/texmf.cnf" 1341108668 572 7ea7194897937febeb63145e1c3a1f03 ""
   "/usr/local/texlive/2012/texmf/web2c/texmf.cnf" 1336865692 31299 729e216d9b945005c0d4b079c0500bc9 ""
-  "project1.aux" 1455435998 1268 fa797b127310351545796c20f1e0152a ""
-  "project1.out" 1455435998 221 531d6d4bece7945274af8735ed96ac8b ""
-  "project1.tex" 1455435994 8917 25f41e35fb3d7257f0cdb7d3cc00a3fc ""
-  "project1.toc" 1455435998 261 49b1fb4c5058e37ffd7fa0dfe553e1de ""
+  "project1.aux" 1455438834 1469 2279fd32e1f55aee55da4fdd9b3b8507 ""
+  "project1.out" 1455438834 221 531d6d4bece7945274af8735ed96ac8b ""
+  "project1.tex" 1455438823 10347 582d51fe6cdc9d29d31b48656ab6da91 ""
+  "project1.toc" 1455438834 261 2deca1912d08c6b2808235511536b5a7 ""
   "setpsizechange.png" 1455431377 29450 e8696ecb068938073a5541077c2a3dc2 ""
   (generated)
+  "project1.pdf"
   "project1.log"
   "project1.toc"
-  "project1.pdf"
   "project1.out"
   "project1.aux"

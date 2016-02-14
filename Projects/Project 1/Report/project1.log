@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012) (format=xelatex 2012.6.30)  14 FEB 2016 02:46
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012) (format=xelatex 2012.6.30)  14 FEB 2016 03:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2131,47 +2131,47 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
 [1]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 154.
+d on input line 153.
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 159.
+put line 158.
 
 LaTeX Font Warning: Font shape `EU1/Charter(0)/m/sc' undefined
-(Font)              using `EU1/Charter(0)/m/n' instead on input line 162.
+(Font)              using `EU1/Charter(0)/m/n' instead on input line 161.
 
 File: setpsizechange.png Graphic file (type QTm)
 <use  "setpsizechange.png" >
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-(../Code/Project1.cpp [2] [3] [4]) (../Code/plots.py [5]) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+[2] (../Code/Project1.cpp [3] [4] [5]) (../Code/plots.py [6])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
 
 (./project1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 235.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 43445 strings out of 494004
- 939404 string characters out of 3150890
- 1078957 words of memory out of 3000000
- 45939 multiletter control sequences out of 15000+200000
+ 43446 strings out of 494004
+ 939424 string characters out of 3150890
+ 1081000 words of memory out of 3000000
+ 45940 multiletter control sequences out of 15000+200000
  12666 words of font info for 102 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,9n,74p,660b,2435s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,9n,74p,686b,2404s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on project1.pdf (8 pages).
