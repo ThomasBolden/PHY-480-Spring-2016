@@ -125,25 +125,35 @@
 
     An example of this being useful is in electromagnetism. Poisson's equation describes the electrostatic potential energy field $\Phi$ caused by a given charge density distribution $\rho$. The equation in three dimensions is
     \begin{equation} \nabla^2 \Phi = - 4 \pi \rho(\mathbf{r}) \end{equation}
-    where the electrostatic potential and charge density are spherically symmetric. This allows one to simplify the equation to one dimension
+    where the electrostatic potential and charge density are spherically symmetric. This allows one to simplify the equation to one dimension 
     \begin{equation} \dfrac{1}{r^2} \dfrac{\dif}{\dif r} \left( r^2 \dfrac{\dif \Phi}{\dif r} \right) = -4\pi \rho(r) \end{equation}
+    which can be rewritten using the substitution $\Phi (r) = \phi (r) /r$
+    \begin{equation} \dfrac{\dif\,^2 \phi}{\dif{r^2}} = -4\pi r \rho(r). \end{equation}
+    Now, like equation (1), this is linear second order in $r$. This becomes clear when we let $k^2(r)=0$ , $f(r)=-4\pi r \rho(r)$. If we let $\phi \to u$ and $r \to x$, we get the general Poisson equation
+    \begin{equation} -u'' = f(x). \end{equation}
+    If we apply certain boundary conditions, we can rewritten as a set of linear equations. In this project, I explored several methods of solving systems of linear equations, including Gaussian elimination, LU decomposition, and analytically. In the section that follows, I outline the methods and algorithms used to write the C++ code, along with some examples of the output one should expect when running the code themself. The next section contains the useful results. In it, I compare the run times and efficiency of each method used, along with the magnitude of the associated error. Finally, the source code is presented for reference.
 
 \subsection{Methods}
 
     Given a differential equation of the form 
     \begin{equation} - \dfrac{\dif\,^2}{\dif x^2} u(x) = f(x) \end{equation}
-    where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the boundary conditions $u(0)=u(1)=0$. The second derivative can be approximated as 
-    \begin{equation} u'' = \dfrac{u_{i+1}+u_{i-1}-2u_i}{u^2} \end{equation}
+    where $f(x)$ is continuous on the domain $x \in (0,1)$. We also assume the Dirichlet boundary conditions $u(0)=u(1)=0$. We can define a discretized approximation second derivative of $u$ as $v_i$ with grid points $x_i=ih$ in the interval $x_0=0$ to $x_{n+1}=1$, and with step lengths $h=1/(n+1)$. The boundary conditions become $v_0 = 0 = v_{n+1}$. The second derivative of $u$ can be approximated as 
+    \begin{equation} -u'' = -\dfrac{v_{i+1}+v_{i-1}-2v_i}{h^2} = f_i \;\;\;\; \text{for}\;\; i = 1,\dots,n \end{equation}
+    This equation can be written as a set of linear equations of the form
+    \begin{equation} \mathbf{Av} = \tilde{\mathbf{b}}  \end{equation}
+    
 
-    \[ \arraycolsep 1.0ex \bold{A} = \left( \begin{array}{c c c c c c c} 
+    \[ \arraycolsep 1.0ex \mathbf{A} = \left[ \begin{array}{c c c c c c c} 
     \vspace{.1cm} 2 & \llap{-}1 & 0 & \cdots & \cdots & \cdots & 0 \\
     \llap{-}1 & 2 & \llap{-}1 & 0 & \cdots & \cdots & 0 \\
-    0 & \llap{-}1 & 2 & \llap{-}1 & \ddots &  & 0 \\
+    0 & \llap{-}1 & 2 & \llap{-}1 & \ddots &  & \vdots \\
     \vdots & 0 & \llap{-}1 & 2 & \ddots & \ddots & \vdots \\
     \vdots & \vdots & \ddots &\ddots&\ddots&\ddots&0 \\
     \vdots &\vdots&&\ddots&\ddots&\ddots& \llap{-}1 \vspace{.1cm} \\ 
     0 &0&\cdots&\cdots&0&\llap{-}1& 2 
-    \end{array} \right) \;\; , \;\; \bold{v} = \left( \begin{array}{c} v_0 \\ v_1 \\ \vdots \\ v_{n-1} \\ v_n \end{array} \right) \]
+    \end{array} \right] \;\; , \;\; \bold{v} = \left[ \begin{array}{c} v_0 \\ v_1 \\ \vdots \\ \vdots \\ v_{n-1} \\ v_n \end{array} \right] \;\; , \;\; \tilde{b}_i = h^2 f_i \]
+
+    If the source term is $f(x) = 100e^{-10x}$ 
 
 \subsection{Results}
 
