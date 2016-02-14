@@ -152,7 +152,7 @@
     0 &0&\cdots&\cdots&0&\llap{-}1& 2 
     \end{array} \right] \;\; , \;\; \bold{v} = \left[ \begin{array}{c} v_0 \\ v_1 \\ \vdots \\ \vdots \\ v_{n-1} \\ v_n \end{array} \right] \;\; , \;\; \tilde{b}_i = h^2 f_i \]
 
-    One way to solve tridiagonal matrices (like the one above) is Gaussian elimination. Basically, Gaussian elimination uses the first equation to eliminate the first unknown $x_1$ from the remaining equations, and continues this trend for the remaining equations until an upper triangular matrix is formed. An upper triangular matrix can be easily solved using back substitution. This process requires a total of $\frac{2n^3}{3} + \mathcal{O}(n^2)$ floating point operations. The general algorithm is below.
+    One way to solve tridiagonal matrices (like the one above) is Gaussian elimination. Basically, Gaussian elimination uses the first equation to eliminate the first unknown $x_1$ from the remaining equations, and continues this trend for the remaining equations until an upper triangular matrix is formed. An upper triangular matrix can be easily solved using back substitution. This process requires a total of $\mathcal{O}(8n)$ floating point operations. The general algorithm is below.
     
     \begin{algorithm}
     \caption{Gaussian Elimination}
@@ -181,29 +181,36 @@
     \label{LU Decomp}
     \begin{algorithmic}[1]
     \Function{LUdecomp}{A}
-    \For{$k=1$ to  $n-1$}
-    \For{$i=k+1$ to $n$}
-    \State $a_{ik} = \frac{a_{ik}}{a_{kk}}$
-    \For{$j=k+1$ to $n+1$}
-    \State $a_{ij}=a_{ij}-a_{ik}\times a_{kj}$
+    \For{$i=1$ to  $n$}
+    \For{$j=i$ to $n$}
+    \State $L_{ik}U{kj}=a_{ij}$
     \EndFor
+    \For{$j=i+1$ to $n$}
+    \State $L_{jk}U_{ki}=a_{ji}$
     \EndFor
     \EndFor
     \EndFunction
     \end{algorithmic}
     \end{algorithm}
 
+    This requires approximately $\frac{2}{3}n^3$ floating point operations on an $n$ by $n$ matrix. \pagebreak
+
+    The final task is to time each of the algorithms above. This is done most easily using the ``time.h'' header in C++.
+
+    
 
 \subsection{Results}
 
-    \begin{figure}[h] \begin{center}
+    The graph below shows how the accuracy of the traditional tridiagonal matrix solver increases as the step length increases.
+
+    \begin{figure}[h!] \begin{center}
     \includegraphics{setpsizechange.png}
     \end{center}  \end{figure}
 
-%\pagebreak
+\pagebreak
 \subsection{Conclusions}
 
-    .
+    I have show how the accuracy of the solution to a linear system depends on the size of the system. For smaller systems, the number of floating point operations did not impede the ability of the user to impliment more accurate methods.
 
 \subsection{Code}
 
