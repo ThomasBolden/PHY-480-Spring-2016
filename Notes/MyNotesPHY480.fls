@@ -1,4 +1,4 @@
-PWD /Users/Thomas/Documents/College/*SPRING 2016/PHY 480 - Computational/Notes
+PWD /Users/Thomas/Documents/College/*SPRING 2016/PHY 480 - Computational/PHY 480 - Github/Notes
 INPUT /usr/local/texlive/2012/texmf.cnf
 INPUT /usr/local/texlive/2012/texmf/web2c/texmf.cnf
 INPUT /usr/local/texlive/2012/texmf-var/web2c/xetex/xelatex.fmt
@@ -8,6 +8,14 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+INPUT /usr/local/texlive/2012/texmf-dist/tex/xelatex/xetex-def/xetex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/xelatex/xetex-def/xetex.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -54,8 +62,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
-INPUT /usr/local/texlive/2012/texmf-dist/tex/xelatex/xetex-def/xetex.def
-INPUT /usr/local/texlive/2012/texmf-dist/tex/xelatex/xetex-def/xetex.def
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
@@ -71,10 +77,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftp
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
@@ -296,6 +298,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty

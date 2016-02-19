@@ -1,21 +1,63 @@
 %!TEX program = xelatex
 \documentclass[10pt]{article} % use larger type; default would be 10pt
-
+\usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx,lipsum,listings}
 \usepackage[utf8]{inputenc}
 
 \defaultfontfeatures{Mapping=tex-text} 
 
+\newfontfamily\Codefont{Courier}  %{GillSans} %{AmericanTypewriter}
+
+\definecolor{gry}{rgb}{.95,.95,.95}
+
 \lstset{language=C++,
-                basicstyle=consolas,
-                keywordstyle=\color{magenta}\ttfamily,
-                stringstyle=\color{green}\ttfamily,
-                commentstyle=\color{blue}\ttfamily,
+                %moredelim=[is][\color{Green}\Codefont]{<}{>},
+                basicstyle=\small\Codefont,
+                identifierstyle=\Codefont,
+                directivestyle=\color{BurntOrange}\Codefont,
+                keywordstyle=\color{RubineRed}\Codefont,
+                stringstyle=\color{Green}\Codefont,
+                commentstyle=\color{gray}\Codefont,
+                emphstyle=\color{Violet}\Codefont,
+                emph={1,2,3,4,5,6,7,8,9,0},
+                showspaces=false,
+                %keywordstyle=[2]\color{Violet},
+                keywords=[2]{*,1,2,3,4,5,6,7,8,9,0},
+                keywordstyle=[2]\color{blue},
+                showstringspaces=false,
                 morecomment=[l][\color{orange}]{\#}}
+\lstset{literate=%
+    *{0}{{{\color{NavyBlue}0}}}1
+    {1}{{{\color{NavyBlue}1}}}1
+    {2}{{{\color{NavyBlue}2}}}1
+    {3}{{{\color{NavyBlue}3}}}1
+    {4}{{{\color{NavyBlue}4}}}1
+    {5}{{{\color{NavyBlue}5}}}1
+    {6}{{{\color{NavyBlue}6}}}1
+    {7}{{{\color{NavyBlue}7}}}1
+    {8}{{{\color{NavyBlue}8}}}1
+    {9}{{{\color{NavyBlue}9}}}1
+    {.0}{{{\color{NavyBlue}.0}}}2
+    {.1}{{{\color{NavyBlue}.1}}}2
+    {.2}{{{\color{NavyBlue}.2}}}2
+    {.3}{{{\color{NavyBlue}.3}}}2
+    {.4}{{{\color{NavyBlue}.4}}}2
+    {.5}{{{\color{NavyBlue}.5}}}2
+    {.6}{{{\color{NavyBlue}.6}}}2
+    {.7}{{{\color{NavyBlue}.7}}}2
+    {.8}{{{\color{NavyBlue}.8}}}2
+    {.9}{{{\color{NavyBlue}.9}}}2
+}
 \lstset{alsolanguage=[90]Fortran}
-\lstset{basicstyle=\small}
-\lstset{backgroundcolor=\color{white}}
+\lstset{alsolanguage=python}
+\lstset{backgroundcolor=\color{gry}}
 \lstset{frame=single}
+\lstset{
+    numbers=left,
+    numberstyle=\Codefont,
+    title=\lstname,
+    tabsize=4,
+}
 
 \setmainfont{Charter} 
 %\setsansfont{Deja Vu Sans}
@@ -190,18 +232,18 @@ To move up one level in a directory
 \underline{Hello World}
 
 \begin{lstlisting}
- 1    // comments look like this
- 2    #include<iostream> // input and output
- 3    #include<cmath> // math functions
- 4    using namespace std;
- 5    int main(int argc, char* argv[])
- 6    {
- 7        // convert the text argv[1] to double using atof:
- 8        double r = atof(argv[1]); /* convert the text argv[1] to double */
- 9        double s = sin(r);
-10        cout << "Hello, World! sin(" << r << ") =" << s << endl;
-11        return 0; /* success execution of the program */
-12    }
+// comments look like this
+#include<iostream> // input and output
+include<cmath> // math functions
+using namespace std;
+int main(int argc, char* argv[])
+{
+    // convert the text argv[1] to double using atof:
+    double r = atof(argv[1]); /* convert the text argv[1] to double */
+    double s = sin(r);
+    cout << "Hello, World! sin(" << r << ") =" << s << endl;
+    return 0; /* success execution of the program */
+}
 \end{lstlisting}
 
 In C++, you do not need to declare variables, but should anyways \\ \hspace{.4cm} Because there is an argv[1] in the program, you need to give the program a variable IN THE COMMAND LINE. Otherwise use cin >>
@@ -321,9 +363,20 @@ f(x) \approx O_n(x) &= \sum_{i=0}^n a_i x^i \\
 
 Quantum Dots
 
+Schr\"{o}dinger equation for 2 particles in a harmonic oscillaor well.
+
+\[ \left( -\dfrac{\hbar^2}{m} \dfrac{1}{r^2}\dfrac{d}{dr}r^2\dfrac{d}{dr} + \dfrac{1}{4}{m\omega^2r^2}+\dfrac{ke^2}{r} \right) \phi(r) = E_n \phi(r) \]
+
+Equation to solve:
+\[ \left( \dfrac{d^2}{d\rho^2}+\rho^2+\dfrac{\beta}{\rho} \right) u(\rho) = \lambda u(\rho) \]
+\[ = \left( -\dfrac{d^2}{d\rho^2} + v(\rho) \right) u(\rho) = \lambda u(\rho) \]
 
 
+\[ \hat{A} \cdot \hat{u} \]
 
+\[ 
+\begin{array}{ccccc} \end{array}
+\]
 
 
 

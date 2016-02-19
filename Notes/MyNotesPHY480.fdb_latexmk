@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1455152129 "MyNotesPHY480.tex" "MyNotesPHY480.pdf" "MyNotesPHY480" 1455152132
+["pdflatex"] 1455755557 "MyNotesPHY480.tex" "MyNotesPHY480.pdf" "MyNotesPHY480" 1455755560
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -155,6 +155,7 @@
   "/usr/local/texlive/2012/texmf-dist/tex/latex/fontspec/fontspec.cfg" 1284849391 216 8835bd68d0b21e3df98697b681d8364f ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/fontspec/fontspec.sty" 1336345946 9465 945e05707305f33412440cd3f2ff337c ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/geometry/geometry.sty" 1284422013 40502 e003406220954b0716679d7928aedd8a ""
+  "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/dvipsnam.def" 1156702488 4874 4251d89f9985d46c9ec7bed85727beb1 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty" 1254151804 14183 42a8fc761b806986eef292369afc2988 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty" 1156702488 7882 3bd78469d444e8d494e27cfd7ca92719 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty" 1156702488 2266 7054435e4584a41cf53b0a7ca624d0cb ""
@@ -228,13 +229,13 @@
   "/usr/local/texlive/2012/texmf-var/web2c/xetex/xelatex.fmt" 1341108757 3110378 0403bb164468d05470a81b7d8105cc63 ""
   "/usr/local/texlive/2012/texmf.cnf" 1341108668 572 7ea7194897937febeb63145e1c3a1f03 ""
   "/usr/local/texlive/2012/texmf/web2c/texmf.cnf" 1336865692 31299 729e216d9b945005c0d4b079c0500bc9 ""
-  "MyNotesPHY480.aux" 1455152131 2070 b5bb0471e00e541e017c3b1e164c6e39 ""
-  "MyNotesPHY480.out" 1455152131 1033 38cbcf90967c3509b28b125f797bb086 ""
-  "MyNotesPHY480.tex" 1455152126 10359 eb5bc023dc9aa69e416d0f2ddcdcdccc ""
-  "MyNotesPHY480.toc" 1455152131 1212 df3b7a51340dcf7a8d416c4d7d298fca ""
+  "MyNotesPHY480.aux" 1455755560 2259 5de233a05fabf53c4be1b7d673fc9f8a ""
+  "MyNotesPHY480.out" 1455755560 1167 ecc2c8beb3b245695ae11035683f45bc ""
+  "MyNotesPHY480.tex" 1455755557 12251 ce7df7fa489e31846b2aa30f98a7d2e5 ""
+  "MyNotesPHY480.toc" 1455755560 1365 4b3aed8c73ce3296595af6c49b991c6d ""
   (generated)
   "MyNotesPHY480.out"
-  "MyNotesPHY480.toc"
   "MyNotesPHY480.pdf"
+  "MyNotesPHY480.toc"
   "MyNotesPHY480.aux"
   "MyNotesPHY480.log"
