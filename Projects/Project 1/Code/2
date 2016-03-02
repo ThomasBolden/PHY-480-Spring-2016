@@ -1,0 +1,5 @@
+Solution to tridiagonal matrix of size n=2
+Time elapsed = 4.1e-05 seconds
+       x:             u(x):          v(x):  
+     0.33333333     0.63100781     0.26896526
+     0.66666667     0.33209097     0.14155282

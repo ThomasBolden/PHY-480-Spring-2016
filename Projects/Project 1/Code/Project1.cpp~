@@ -10,9 +10,11 @@ Solving a tridiagonal matrix
 #include <cmath>
 #include <iomanip>
 #include <string>
+#include <armadillo>
 #include "time.h"
 
 using namespace std;
+using namespace arma;
 
 ofstream myfile;
 
