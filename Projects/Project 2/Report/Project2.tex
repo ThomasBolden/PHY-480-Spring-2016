@@ -1,40 +1,32 @@
 %!TEX program = xelatex
 \documentclass[11pt]{article}
 
-\usepackage[dvipsnames]{xcolor}
-\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, nopageno, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, graphicx, listings, lipsum, tabto, tcolorbox, sectsty, booktabs, siunitx, caption, algorithm, algpseudocode}
+\usepackage[x11names]{xcolor} % needed to declare before tikz
+\usepackage{amsmath,  latexsym, amssymb, url, amssymb, pgfplots, amsthm, mathtools, setspace, commath, tikz, verbatim, array, enumitem, bbding, bigints, fontspec, xunicode, xltxtra, geometry, algorithm, algpseudocode, graphicx,listings,lipsum,tabto,tcolorbox,sectsty,booktabs,siunitx,caption}
 \usepackage[version=4]{mhchem}
 \usepackage[utf8]{inputenc}
-\usepackage[parfill]{parskip}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=darkgray,
-    filecolor=magenta,      
-    urlcolor= JungleGreen,
-}
 
-\geometry{margin=1in}
-\geometry{letterpaper} % or letterpaper (US) or a5paper or....
 
 \NumTabs{6}
 
 \defaultfontfeatures{Mapping=tex-text} 
 
 \setmainfont{Charter} 
-\setsansfont{Charter}
-\setmonofont{Charter}
+
+\newfontfamily\Codefont{Courier}  %{GillSans} %{AmericanTypewriter}
+
+\definecolor{gry}{rgb}{.95,.95,.95}
 
 \lstset{language=C++,
-                moredelim=[is][\color{Green}\Codefont]{<}{>},
+                moredelim=[is][\color{Green3}\Codefont]{<}{>},
                 basicstyle=\small\Codefont,
                 identifierstyle=\Codefont,
-                directivestyle=\color{BurntOrange}\Codefont,
-                keywordstyle=\color{RubineRed}\Codefont,
-                stringstyle=\color{Green}\Codefont,
-                commentstyle=\color{gray}\Codefont,
-                emphstyle=\color{Violet}\Codefont,
-                emph={1,2,3,4,5,6,7,8,9,0},
+                directivestyle=\color{Coral1}\Codefont,
+                keywordstyle=\color{DeepPink2}\Codefont,
+                stringstyle=\color{SeaGreen4}\Codefont,
+                commentstyle=\color{Snow4}\Codefont,
+                emphstyle=\color{DeepSkyBlue3}\Codefont,
+                emph={double,int,float,void,long},
                 showspaces=false,
                 %keywordstyle=[2]\color{Violet},
                 keywords=[2]{*,1,2,3,4,5,6,7,8,9,0},
@@ -42,26 +34,26 @@
                 showstringspaces=false,
                 morecomment=[l][\color{orange}]{\#}}
 \lstset{literate=%
-    *{0}{{{\color{NavyBlue}0}}}1
-    {1}{{{\color{NavyBlue}1}}}1
-    {2}{{{\color{NavyBlue}2}}}1
-    {3}{{{\color{NavyBlue}3}}}1
-    {4}{{{\color{NavyBlue}4}}}1
-    {5}{{{\color{NavyBlue}5}}}1
-    {6}{{{\color{NavyBlue}6}}}1
-    {7}{{{\color{NavyBlue}7}}}1
-    {8}{{{\color{NavyBlue}8}}}1
-    {9}{{{\color{NavyBlue}9}}}1
-    {.0}{{{\color{NavyBlue}.0}}}2
-    {.1}{{{\color{NavyBlue}.1}}}2
-    {.2}{{{\color{NavyBlue}.2}}}2
-    {.3}{{{\color{NavyBlue}.3}}}2
-    {.4}{{{\color{NavyBlue}.4}}}2
-    {.5}{{{\color{NavyBlue}.5}}}2
-    {.6}{{{\color{NavyBlue}.6}}}2
-    {.7}{{{\color{NavyBlue}.7}}}2
-    {.8}{{{\color{NavyBlue}.8}}}2
-    {.9}{{{\color{NavyBlue}.9}}}2
+    *{0}{{{\color{DarkOrchid3}0}}}1
+    {1}{{{\color{DarkOrchid3}1}}}1
+    {2}{{{\color{DarkOrchid3}2}}}1
+    {3}{{{\color{DarkOrchid3}3}}}1
+    {4}{{{\color{DarkOrchid3}4}}}1
+    {5}{{{\color{DarkOrchid3}5}}}1
+    {6}{{{\color{DarkOrchid3}6}}}1
+    {7}{{{\color{DarkOrchid3}7}}}1
+    {8}{{{\color{DarkOrchid3}8}}}1
+    {9}{{{\color{DarkOrchid3}9}}}1
+    {.0}{{{\color{DarkOrchid3}.0}}}2
+    {.1}{{{\color{DarkOrchid3}.1}}}2
+    {.2}{{{\color{DarkOrchid3}.2}}}2
+    {.3}{{{\color{DarkOrchid3}.3}}}2
+    {.4}{{{\color{DarkOrchid3}.4}}}2
+    {.5}{{{\color{DarkOrchid3}.5}}}2
+    {.6}{{{\color{DarkOrchid3}.6}}}2
+    {.7}{{{\color{DarkOrchid3}.7}}}2
+    {.8}{{{\color{DarkOrchid3}.8}}}2
+    {.9}{{{\color{DarkOrchid3}.9}}}2
 }
 \lstset{alsolanguage=[90]Fortran}
 \lstset{alsolanguage=python}
@@ -73,23 +65,38 @@
     title=\lstname,
     tabsize=4,
 }
+\geometry{margin=1in}
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\usepackage[parfill]{parskip} % Activated to begin paragraphs with an empty line rather than an indent
 
 \title{PHY 480 - Computational Physics \\ Project 2: Schr\"{o}dinger's Equation for 2 electrons in a 3D Well}
 \author{Thomas Bolden}
 \date{March 4, 2016}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkgray,
+    filecolor=magenta,      
+    urlcolor=DarkSlateGray4,
+}
 
-\setcounter{secnumdepth}{0} 
-%\sectionfont{\fontsize{12}{15}\selectfont} 
-\newenvironment{amatrix}[1]{
+\setcounter{secnumdepth}{0} % deactivate for section numbers
+%\sectionfont{\fontsize{12}{15}\selectfont} % Activate for same font size sections
+\subsectionfont{\fontsize{15}{15}\selectfont}
+\newenvironment{amatrix}[1]{%
   \left[\begin{array}{@{}*{#1}{c}|c@{}}
-}{
+}{%
   \end{array}\right]
 }
+
+\setmainfont{Charter}
 
 \begin{document}
 
 \maketitle
+
+\thispagestyle{empty}
 
 \centerline{Github Repository at \href{https://github.com/ThomasBolden/PHY-480-Spring-2016}{https://github.com/ThomasBolden/PHY-480-Spring-2016}}
 
@@ -124,16 +131,18 @@
 
 \subsection{Conclusions}
 
-    .
+    .p
 
 \subsection{Code}
 
-    .
+    \lstinputlisting[language=C++]{../Code/EigensolverTests.cpp}
+
+    \lstinputlisting[language=C++]{../Code/2eWavefunctions.cpp}
 
 \begin{thebibliography}{1}
 
 \bibitem{morten} 
-    M. Hjorth-Jensen, {\em Computational Physics}, University of Oslo (2013).
+    M. Hjorth-Jensen, {\em Computational Physics}, University of Oslo (2015). 
 
 \end{thebibliography}
 
