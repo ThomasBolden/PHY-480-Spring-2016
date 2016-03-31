@@ -153,8 +153,8 @@ int main(){
 	int maxloops = 1e8; 
 	double epsilon = 1e-10;
 
-	filename = "Comparisons8.txt";
-	rho = 8.0;
+	filename = "Comparisons9.txt";
+	rho = 9.0;
 
 //	cout << "Enter a name for the file: ";
 //	cin >> filename;
