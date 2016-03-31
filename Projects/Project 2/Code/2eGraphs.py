@@ -47,7 +47,7 @@ def getWavefunction(filename):
 
 	return rho, u1, u2, u3
 
-x, y1, y2, y3 = getWavefunction('NormalWavefuncOmega5.txt')
+x, y1, y2, y3 = getWavefunction('NormalWavefuncOmega0p01.txt')
 
 fig , ax = plt.subplots(1) 
 
@@ -61,7 +61,7 @@ ax.set_xlabel('Radial Coordinate $\\rho$',**hfont)
 ax.set_ylabel("Wavefunction $|{u(\\rho)}|^2$",**hfont)
 ax.legend(loc='upper right',fancybox='True',prop={'size':12})
 
-plt.savefig('WavefunctionOmega5.png')
+plt.savefig('WavefunctionOmega0p01.png')
 plt.show()
 
 

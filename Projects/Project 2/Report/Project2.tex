@@ -277,7 +277,14 @@
 
 \subsection{Conclusions}
 
-    Jacobi's method for diagonalizing matrices was found to be orders of magnitude slower than the Armadillo library's {\em eig\_sys} function. This means that, while useful and simple to impliment, Jacobi's method is only practical for small matrices.
+    The first task was to impliment algorithms that solve a one electron system in a three dimensional harmonic oscilator potential well. To do this, a square matrix was diagonalized using both a brute-force Jacobi rotation algorithm and Armadillo. 
+    Jacobi's method for diagonalizing matrices was found to be orders of magnitude slower than the Armadillo library's {\em eig\_sys} function. This means that, while useful and simple to impliment, Jacobi's method is only practical for small matrices. 
+
+    The next task was to compare the transformations required to diagonalize a matrix based on its dimensionality. The transformations seemed to scale as nearly the square of the dimensions.
+
+    The final task was to use the most efficient and accurate settings for $\rho_\text{max}$ and $n$, and extend it for the two-electron model. The wavefunctions were tested with varying oscillator strength ($\omega_r$), and it was found that the relationship between $\omega_r$ and the wavefunction spread across $\rho$ was inverse. In other words, as $\omega_r$ increased, the wavefunction compressed.
+
+    All in all, both Jacobi rotation and Armadillo are accurate methods to diagonalize matrices. However, in order to be useful, the program must also be efficient. So, if one is to use either of these methods in the future, brute-force Jacobi rotation is not fast enough, and the Armadillo library is much more reasonable.
 
 \subsection{Code}
 
@@ -293,6 +300,8 @@
 
 \bibitem{morten} 
     M. Hjorth-Jensen, {\em Computational Physics}, University of Oslo (2015). 
+
+\bibitem{taut} M. Taut, Phys. Rev. A 48, 3561 - 3566 (1993).
 
 \end{thebibliography}
 
