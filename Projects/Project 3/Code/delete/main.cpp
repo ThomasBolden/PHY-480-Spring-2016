@@ -9,6 +9,8 @@
 #include "planet.h"
 #include "solver.h"
 
+// vector
+
 using namespace std;
 
 void print_initial(int dimension, double time_step, double final_time, double *x_initial, double *v_initial, int N);

@@ -1,6 +1,6 @@
 #include "planet.h"
 
-planet::planet()
+planet::planet() // this-> makes it easier to deal with changing planet to moon or comet, etc.
 {
     mass = 1.;
     position[0] = 1.;

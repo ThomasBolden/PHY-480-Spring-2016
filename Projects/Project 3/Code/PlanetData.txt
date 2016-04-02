@@ -1,0 +1,97 @@
+Coordinate system description:
+
+  Ecliptic and Mean Equinox of Reference Epoch
+
+    Reference epoch: J2000.0
+    xy-plane: plane of the Earth's orbit at the reference epoch
+    x-axis  : out along ascending node of instantaneous plane of the Earth's
+              orbit and the Earth's mean equator at the reference epoch
+    z-axis  : perpendicular to the xy-plane in the directional (+ or -) sense
+              of Earth's north pole at the reference epoch.
+
+Symbol meaning [1 au=149597870.700 km, 1 day=86400.0 s]:
+
+    JDTDB    Epoch Julian Date, Barycentric Dynamical Time
+      X      x-component of position vector (AU)                               
+      Y      y-component of position vector (AU)                               
+      Z      z-component of position vector (AU)                               
+      VX     x-component of velocity vector (AU/day)                           
+      VY     y-component of velocity vector (AU/day)                           
+      VZ     z-component of velocity vector (AU/day)                           
+      LT     One-way down-leg Newtonian light-time (day)                       
+      RG     Range; distance from coordinate center (AU)                       
+      RR     Range-rate; radial velocity wrt coord. center (AU/day)            
+
+Geometric states/elements have no aberration corrections applied.
+
+ Computations by ...
+     Solar System Dynamics Group, Horizons On-Line Ephemeris System
+     4800 Oak Grove Drive, Jet Propulsion Laboratory
+     Pasadena, CA  91109   USA
+     Information: http://ssd.jpl.nasa.gov/
+     Connect    : telnet://ssd.jpl.nasa.gov:6775  (via browser)
+                  telnet ssd.jpl.nasa.gov 6775    (via command-line)
+     Author     : Jon.Giorgini@jpl.nasa.gov
+
+*************************************************************************
+
+Sun - Centered System (2016-Apr-01 00:00:00.0000) (no force on sun)
+
+	x	y	z
+	vx	vy	vz
+
+Mercury (M = 0.166e-06)
+	2.100526412817165E-01  2.339488438556652E-01 -1.545507962517601E-04
+  -2.650687204035229E-02  1.996912409424480E-02  4.063496140811032E-03
+
+Venus (M = 2.448e-06)
+	6.266037515213778E-01 -3.682499696511221E-01 -4.120792805859650E-02
+   1.012787634394774E-02  1.735485237482617E-02 -3.464913218130080E-04
+
+Earth (M = 3.040e-06)
+	-9.793311633837750E-01 -1.987646408249068E-01  9.293200775702925E-06
+	3.135469871790338E-03 -1.692741580718065E-02  9.125383469427348E-07
+
+Mars (M = 0.323e-06)
+  -1.286408718749785E+00 -9.264843163163465E-01  1.215669107282696E-02
+   8.701714988374526E-03 -1.015843608588173E-02 -4.264407188685167E-04
+
+Jupiter (M = 954.792e-06)
+  -5.345732150598614E+00  9.549463373000845E-01  1.156517277709683E-01
+  -1.418553272043166E-03 -7.078946182932140E-03  6.112825555338199E-05
+
+Saturn (M = 285.886e-06)
+  -3.266398924730184E+00 -9.470032765683111E+00  2.946342484697349E-01
+   4.968751410735902E-03 -1.840936008643638E-03 -1.661484125689619E-04
+
+Uranus (M = 43.662e-06)
+   1.874534841723630E+01  6.873184505191607E+00 -2.172015652045207E-01
+  -1.382705787436567E-03  3.502346167723026E-03  3.102145764661664E-05
+
+
+Neptune (M = 51.514e-06)
+   2.805038689280813E+01 -1.050933112012182E+01 -4.299960739160724E-01
+   1.080385124850207E-03  2.951065674180167E-03 -8.621048764474593E-05
+
+Pluto
+   8.812868465902440E+00 -3.186271445270888E+01  8.591609083702370E-01
+   3.092903491832986E-03  1.783718346857728E-04 -9.268858980316758E-04
+
+Moon
+  -9.786296958921559E-01 -2.012493214589834E-01  2.261355506338100E-04
+   3.685360557276869E-03 -1.673439257190185E-02 -2.427991724524276E-05
+
+
+Titan
+
+
+
+Europa
+
+
+
+Io
+
+
+
+Comet?
