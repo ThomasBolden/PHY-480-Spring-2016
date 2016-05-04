@@ -1,5 +1,12 @@
 \contentsline {subsection}{Introduction}{2}{section*.2}
 \contentsline {subsection}{Methods}{2}{section*.3}
-\contentsline {subsection}{Results}{2}{section*.4}
-\contentsline {subsection}{Conclusions}{2}{section*.5}
-\contentsline {subsection}{Code}{2}{section*.6}
+\contentsline {subsubsection}{The Velocity Verlet Algorithm}{3}{section*.4}
+\contentsline {subsubsection}{Fourth Order Runge-Kutta Method}{4}{section*.5}
+\contentsline {subsection}{Results}{5}{section*.6}
+\contentsline {subsubsection}{The Earth-Sun System}{5}{section*.7}
+\contentsline {subsubsection}{Critical Velocities}{5}{section*.8}
+\contentsline {subsubsection}{The Eath-Jupiter-Sun System}{5}{section*.9}
+\contentsline {subsubsection}{The Solar System}{5}{section*.10}
+\contentsline {subsubsection}{The Perihelion Procession of Mercury - Optional}{5}{section*.11}
+\contentsline {subsection}{Conclusions}{6}{section*.12}
+\contentsline {subsection}{Code}{6}{section*.13}

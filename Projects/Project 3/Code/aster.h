@@ -2,27 +2,28 @@
 #define ASTER_H
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <vector>
 
 class body
 {
 public:
     // Properties
     double mass;
-    double position[3];
-    double velocity[3];
+    double position[2];
+    double velocity[2];
     double potentialE;
     double kineticE;
 
     // Initializers
     body();
-    body(double M, double x, double y, double z, double vx, double vy, double vz);
+    body(double M, double x, double y, double vx, double vy);
 
     // Functions
     double distance(body neighbor);
-    double GravitationalForce(body neighbor, double Gconst);
-    double Acceleration(body neighbor, double Gconst);
+    double GravitationalForce(body neighbor, double G);
+    double Acceleration(body neighbor, double G);
     double KineticEnergy();
-    double PotentialEnergy(body &neighbor, double Gconst, double epsilon);
+    double PotentialEnergy(body &neighbor, double G, double epsilon);
 
 };
 
