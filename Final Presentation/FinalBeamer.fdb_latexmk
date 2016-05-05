@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1462358433 "FinalBeamer.tex" "FinalBeamer.pdf" "FinalBeamer" 1462358447
+["pdflatex"] 1462360684 "FinalBeamer.tex" "FinalBeamer.pdf" "FinalBeamer" 1462360697
   "./Code/MaxOffDiagonal.cpp" 1462340491 263 7a4827294aeab507baa465e2b6a2abdd ""
   "./Code/RotateA.cpp" 1462354408 372 9027b2d7424cddd1fe157d483ce63e4e ""
   "./Code/RotateB.cpp" 1462354359 283 58bddf5a31c4c3e8e9f25321a27aad68 ""
@@ -307,16 +307,16 @@
   "Code/WavefunctionOmega0p50.png" 1459282896 70765 9468af04f05d59ef1ef5b82ce3263a67 ""
   "Code/WavefunctionOmega1.png" 1459282990 70661 fe43aa08dd7da2cdbe53af918a0204ac ""
   "Code/WavefunctionOmega5.png" 1459283054 68451 8efc460df2ca402d48891d6caab18fda ""
-  "FinalBeamer.aux" 1462358446 8278 f17a3dc6f9ea5bd44f763c04d4edc2fe ""
-  "FinalBeamer.nav" 1462358446 4343 56defa3d4fb80dfc484080694e60fd1a ""
-  "FinalBeamer.out" 1462358446 222 2549c50a1c794f6d11692d763484d6aa ""
-  "FinalBeamer.tex" 1462358404 13944 d8b2f222060210e23f3f1df109587fa7 ""
+  "FinalBeamer.aux" 1462360696 8278 f17a3dc6f9ea5bd44f763c04d4edc2fe ""
+  "FinalBeamer.nav" 1462360696 4343 56defa3d4fb80dfc484080694e60fd1a ""
+  "FinalBeamer.out" 1462360696 222 2549c50a1c794f6d11692d763484d6aa ""
+  "FinalBeamer.tex" 1462360683 14006 a9900bd229eba6fea35ed94cc4690985 ""
   "beamerthemeB.sty" 1462354916 8137 69ee04eccddeb66760ae998fb2a70701 ""
   (generated)
   "FinalBeamer.pdf"
-  "FinalBeamer.toc"
-  "FinalBeamer.nav"
-  "FinalBeamer.log"
-  "FinalBeamer.snm"
-  "FinalBeamer.aux"
   "FinalBeamer.out"
+  "FinalBeamer.aux"
+  "FinalBeamer.toc"
+  "FinalBeamer.snm"
+  "FinalBeamer.log"
+  "FinalBeamer.nav"
