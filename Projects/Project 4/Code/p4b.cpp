@@ -5,8 +5,8 @@
     Part b)   - Ising model of a 2x2 array of molecules.
                 This code computes: the mean energy E, mean magnetization |M|,
                 the specific heat Cv and the susceptibility χ as functions of 
-                T using periodic boundary conditions for L = 2 in the x and y 
-                directions. 
+                temperature T using periodic boundary conditions for L = 2 in 
+                the x and y directions. 
 
     Results are saved to a text file.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,8 +30,5 @@ ofstream myfile;
 /* 
   ======= Function to return indices of largest off-diagonal element =======
   Arguments:
-  mat A - matrix
-  int n - size of square matrix
-  int *k - new row
-  int *l - new column
+  m
 */

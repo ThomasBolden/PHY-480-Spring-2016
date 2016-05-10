@@ -1,7 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1462321281 "Project3.tex" "Project3.pdf" "Project3" 1462321284
-  "../Code/aster.cpp" 1462321265 1559 67514018df40c71520e34ac00308c8e9 ""
-  "../Code/aster.h" 1462320966 617 aed755880e9f95f9951e31ad54eeb290 ""
+["pdflatex"] 1462577516 "Project3.tex" "Project3.pdf" "Project3" 1462577534
+  "../Code/aster.cpp" 1462326895 1512 8be7432c18a68ca898f79d6d874343ce ""
+  "../Code/aster.h" 1462326741 617 aed755880e9f95f9951e31ad54eeb290 ""
+  "../Code/p3b.cpp" 1462336422 1337 97053a5166f45b91713b61b35f024546 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -252,13 +253,13 @@
   "/usr/local/texlive/2012/texmf-var/web2c/xetex/xelatex.fmt" 1341108757 3110378 0403bb164468d05470a81b7d8105cc63 ""
   "/usr/local/texlive/2012/texmf.cnf" 1341108668 572 7ea7194897937febeb63145e1c3a1f03 ""
   "/usr/local/texlive/2012/texmf/web2c/texmf.cnf" 1336865692 31299 729e216d9b945005c0d4b079c0500bc9 ""
-  "Project3.aux" 1462321284 2057 1106f28cf89bb902636d57f1179ca933 ""
-  "Project3.out" 1462321284 796 1f6d4f475695bf8fbaf933583ffcb03f ""
-  "Project3.tex" 1462319333 12826 4e6dcc8746c2457fd690d2a9bb3de506 ""
-  "Project3.toc" 1462321284 783 f30e944c548492876fbd82f9ce215207 ""
+  "Project3.aux" 1462577533 2057 1106f28cf89bb902636d57f1179ca933 ""
+  "Project3.out" 1462577533 796 1f6d4f475695bf8fbaf933583ffcb03f ""
+  "Project3.tex" 1462323252 12879 a4a206d8a0dc45ca3462a6bae7cd371c ""
+  "Project3.toc" 1462577533 783 f30e944c548492876fbd82f9ce215207 ""
   (generated)
-  "Project3.log"
   "Project3.out"
+  "Project3.toc"
   "Project3.pdf"
   "Project3.aux"
-  "Project3.toc"
+  "Project3.log"

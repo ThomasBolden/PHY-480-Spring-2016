@@ -17,7 +17,7 @@ aster::aster()
 }
 
 
-aster::body(double M, double x, double y, double vx, double vy)
+aster::aster(double M, double x, double y, double vx, double vy)
 {
 	mass = M;
 	position[0] = x;
@@ -28,7 +28,7 @@ aster::body(double M, double x, double y, double vx, double vy)
 	kineticE = 0.;
 }
 
-double aster::distance(body neighbor)
+double aster::distance(aster neighbor)
 {
 	double x1,y1,x2,y2,dx,dy,r;
 
@@ -46,27 +46,27 @@ double aster::distance(body neighbor)
 	return r;
 }
 
-double aster::GravitationalForce(body neighbor, double G);
+double aster::GravitationalForce(aster neighbor, double G)
 {
 	double r = this->distance(neighbor);
 	if(r!=0.0) return G*this->mass*neighbor.mass/(r*r);
 	else return 0;
 }
 
-double aster::Acceleration(body neighbor, double G);
+double aster::Acceleration(aster neighbor, double G)
 {
 	double r = this->distance(neighbor);
     if(r!=0) return this->GravitationalForce(neighbor,G)/(this->mass*r);
     else return 0;
 }
 
-double aster::KineticEnergy();
+double aster::KineticEnergy()
 {
 	double velocity2 = (this->velocity[0]*this->velocity[0]) + (this->velocity[1]*this->velocity[1]);
     return 0.5*this->mass*velocity2;
 }
 
-double aster::PotentialEnergy(body &neighbor, double G, double epsilon);
+double aster::PotentialEnergy(aster &neighbor, double G, double epsilon)
 {
 	if(epsilon==0.0) return -G*this->mass*neighbor.mass/this->distance(neighbor);
     else return (G*this->mass*neighbor.mass/epsilon)*(atan(this->distance(neighbor)/epsilon) - (0.5*M_PI));

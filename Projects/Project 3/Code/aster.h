@@ -4,7 +4,7 @@
 #include <cmath>
 #include <vector>
 
-class body
+class aster
 {
 public:
     // Properties
@@ -15,15 +15,15 @@ public:
     double kineticE;
 
     // Initializers
-    body();
-    body(double M, double x, double y, double vx, double vy);
+    aster();
+    aster(double M, double x, double y, double vx, double vy);
 
     // Functions
-    double distance(body neighbor);
-    double GravitationalForce(body neighbor, double G);
-    double Acceleration(body neighbor, double G);
+    double distance(aster neighbor);
+    double GravitationalForce(aster neighbor, double G);
+    double Acceleration(aster neighbor, double G);
     double KineticEnergy();
-    double PotentialEnergy(body &neighbor, double G, double epsilon);
+    double PotentialEnergy(aster &neighbor, double G, double epsilon);
 
 };
 

@@ -177,7 +177,7 @@
     and
     \begin{equation} v_{i+1} = x_i + \dfrac{h}{2}(v_{i+1}' + v_i') + O(h^3) \end{equation}
 
-    There are a couple of important things to notice about these two equations. First, they both have truncation errors of the third degree, growing as $O(h^3)$. Also, in the second equation, $v_{i+1}$ is dependent on $x_{i+1}$, meaning $x(t_{i+1})$ must be calculated before $v(t_{i+1})$. Below is the pseudocode algorithm to impliment this.
+    There are a couple of important things to notice about these two equations. First, they both have truncation errors of the third degree, growing as $O(h^3)$. Also, in the second equation, $v_{i+1}$ is dependent on $x_{i+1}$, meaning the new position must be calculated before the new velocity. Below is the pseudocode algorithm to impliment this.
 
     \begin{algorithm}[H]
     \caption{Verlet Velocity}
@@ -187,7 +187,7 @@
     \For{$i < i_\text{max}$, $i++$}
     \State $r_i = \sqrt{x_i^2+y_i^2}$
     \State $v_{x,i}' = 4\pi^2x_i/r_i^3$
-    \State $v_{y,i}' = 4\pi^2x_i/r_i^3$
+    \State $v_{y,i}' = 4\pi^2y_i/r_i^3$
     \State $x_{i+1} = x_i + hv_{x,i}+ \frac{h^2}{2}v_{x,i}'$
     \State $y_{i+1} = y_i + hv_{y,i}+ \frac{h^2}{2}v_{y,i}'$
     \State $r_{i+1} = \sqrt{x_{i+1}^2+y_{i+1}^2}$
